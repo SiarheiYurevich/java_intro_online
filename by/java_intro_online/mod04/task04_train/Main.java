@@ -29,9 +29,6 @@ public class Main {
 		System.out.println("Trains sorted by destination and departure time:");
 		schedule.getStationSchedule(logic.sortByDepartureTime(logic.sortByDestination(station.getTrains())));
 		
-		//sort using Comparator
-		//Collections.sort(station.getTrains(), new DestinationComparator());
-		
 		schedule.getTrainInfoAtNumber(station.getTrains(), schedule.enterNumber());	
 	}
 
