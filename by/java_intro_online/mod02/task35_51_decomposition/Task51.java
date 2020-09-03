@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /* From given number subtract sum of its digits. From result also subtract sum of its digits.
- * How many this subtracts is needed to get zero?
+ * How many this subtracts are needed to get zero?
  * (to solve task use decomposition)
  */
 
