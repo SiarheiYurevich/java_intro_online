@@ -25,15 +25,6 @@ public class Task01 {
 		return newStrings;
 	}
 
-	public static void print(String[] stringArray) {
-
-		for (int i = 0; i < stringArray.length; i++) {
-
-			System.out.print(stringArray[i] + " ");
-		}
-		System.out.println();
-	}
-
 	public static String camelToSnake(String camel) {
 
 		String snake = "" + Character.toLowerCase(camel.charAt(0));
@@ -52,6 +43,15 @@ public class Task01 {
 			}
 		}
 		return snake;
+	}
+	
+	public static void print(String[] stringArray) {
+
+		for (int i = 0; i < stringArray.length; i++) {
+
+			System.out.print(stringArray[i] + " ");
+		}
+		System.out.println();
 	}
 
 }
