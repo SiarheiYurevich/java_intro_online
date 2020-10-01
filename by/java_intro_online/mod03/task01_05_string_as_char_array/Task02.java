@@ -14,27 +14,29 @@ public class Task02 {
 		System.out.println(str);
 
 		char[] arr = str.toCharArray();
-		char[] newArr = replaceAllFirstsWithSeconds(arr);
+		char[] newArr = replaceFirstsWithSeconds(arr);
 
 		String newStr = new String(newArr);
 		System.out.print(newStr);
 	}
 
-	public static char[] replaceAllFirstsWithSeconds(char[] arr) {
+	public static char[] replaceFirstsWithSeconds(char[] arr) {
 
 		char[] newArr = arr;
 
 		while (findIndexOfFirstInstance(newArr) >= 0) {
-			newArr = replaceFirstWithSecond(newArr);
+			newArr = substituteFirstWithSecond(newArr);
 		}
 		return newArr;
 	}
 
-	public static char[] replaceFirstWithSecond(char[] arr) {
+	public static char[] substituteFirstWithSecond(char[] arr) {
 
-		char[] newArr = new char[arr.length + SECOND_INSTANCE.length - FIRST_INSTANCE.length];
+		int lengthDiffer = SECOND_INSTANCE.length - FIRST_INSTANCE.length;
 		int i = findIndexOfFirstInstance(arr);
-
+		
+		char[] newArr = new char[arr.length + lengthDiffer];
+		
 		for (int j = 0; j < newArr.length; j++) {
 
 			if (j < i) {
@@ -44,7 +46,7 @@ public class Task02 {
 				newArr[j] = SECOND_INSTANCE[j - i];
 			}
 			if (j >= i + SECOND_INSTANCE.length) {
-				newArr[j] = arr[j - 2];
+				newArr[j] = arr[j - lengthDiffer];
 			}
 		}
 		return newArr;
