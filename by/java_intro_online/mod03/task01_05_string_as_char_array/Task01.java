@@ -1,26 +1,32 @@
 package by.java_intro_online.mod03.task01_05_string_as_char_array;
 
-//Given an array of variables names in camel case. Convert the names in snake case.
+// String as char array.
+// Given an array of variables names in camel case. Convert the names in snake case.
 
 public class Task01 {
 
 	public static void main(String[] args) {
 
-		String[] variables = { "FirstVariable", "SecondVariable", "ThirdVariable", "FourthVariable", "FifthVariable" };
+		String[] variableNames = { "FirstVariable", "SecondVariable", "ThirdVariable", "FourthVariable", "FifthVariable" };
+		print(variableNames);
 
-		for (String string : variables) {
-			System.out.print(string + " ");
-		}
-		System.out.println();
-		
-		for (String string : variables) {
-			System.out.print(convertCamelToSnake(string) + " ");
-		}
+		String[] variable_names = convertCamelToSnake(variableNames);
+		print(variable_names);
 	}
 
-	public static String convertCamelToSnake(String camelStr) {
+	public static String[] convertCamelToSnake(String[] camelNames) {
 
-		char[] camelCharArray = camelStr.toCharArray();
+		String[] snake_names = new String[camelNames.length];
+
+		for (int i = 0; i < snake_names.length; i++) {
+			snake_names[i] = convertCamelToSnake(camelNames[i]);
+		}
+		return snake_names;
+	}
+
+	public static String convertCamelToSnake(String camelName) {
+
+		char[] camelCharArray = camelName.toCharArray();
 		char[] snakeCharArray = new char[camelCharArray.length + countOfUpperCase(camelCharArray)];
 		int count = 0;
 
@@ -41,13 +47,12 @@ public class Task01 {
 				snakeCharArray[i + count] = c;
 			}
 		}
+		String snake_name = String.valueOf(snakeCharArray);
 
-		String snakeStr = String.valueOf(snakeCharArray);
-
-		return snakeStr;
+		return snake_name;
 	}
 
-	private static int countOfUpperCase(char[] camelCharArray) {
+	public static int countOfUpperCase(char[] camelCharArray) {
 
 		int count = 0;
 
@@ -59,5 +64,13 @@ public class Task01 {
 			}
 		}
 		return count;
+	}
+
+	public static void print(String[] strings) {
+
+		for (String string : strings) {
+			System.out.print(string + " ");
+		}
+		System.out.println();
 	}
 }
