@@ -1,7 +1,7 @@
 package by.java_intro_online.mod03.task01_05_string_as_char_array;
 
 // String as char array.
-// Replace all occurrences of "word" in a string with "letter".
+// Replace all instances of "word" in a string with "letter".
 
 public class Task02 {
 
