@@ -19,11 +19,13 @@ public class Task14 {
 		int lower = 0;
 
 		for (int i = 0; i < str.length(); i++) {
+			
+			int charNumber = (int) str.charAt(i);
 
-			if ((int) str.charAt(i) >= 65 && (int) str.charAt(i) <= 90) {
+			if (charNumber >= 65 && charNumber <= 90) {
 				upper++;
 			}
-			if ((int) str.charAt(i) >= 97 && (int) str.charAt(i) <= 122) {
+			if (charNumber >= 97 && charNumber <= 122) {
 				lower++;
 			}
 		}
