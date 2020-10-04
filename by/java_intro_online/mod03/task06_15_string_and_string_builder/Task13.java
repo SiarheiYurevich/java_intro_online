@@ -9,40 +9,47 @@ public class Task13 {
 
 		String str = "one two three seven eleven";
 
-		if (isOneLongestWord(str)) {
-			System.out.print(findLongestWord(str));
-		} else {
-			System.out.print("In the string are severel longest words");
-		}
+		findLongestWord(str);
 	}
 
-	public static String findLongestWord(String str) {
+	private static void findLongestWord(String str) {
 
-		String longest = "";
-		int index = 0;
+		int length1 = 0;
+		int index1 = 0;
+
+		int length2 = 0;
+
 		int temp = 0;
 
 		for (int i = 0; i < str.length(); i++) {
 
 			if (str.charAt(i) != ' ') {
 
-				temp = countWordLength(str, i);
+				temp = readWord(str, i).length();
 
-				if (temp > index) {
-					index = temp;
-					longest = str.substring(i, i + temp);
+				if (temp == length1) {
+					length2 = temp;
 				}
-				i = i + temp;
+				if (temp > length1) {
+					length1 = temp;
+					index1 = i;
+				}
 			}
+			i = i + temp;
 		}
-		return longest;
+
+		if (length1 == length2) {
+			System.out.print("In the string are severel longest words");
+		} else {
+			System.out.print("The longest word in the string is " + readWord(str, index1));
+		}
 	}
 
-	public static int countWordLength(String str, int startIndex) {
+	public static String readWord(String str, int start) {
 
 		int wordLength = 0;
 
-		for (int i = startIndex; i < str.length(); i++) {
+		for (int i = start; i < str.length(); i++) {
 
 			if (str.charAt(i) != ' ') {
 				wordLength++;
@@ -50,35 +57,6 @@ public class Task13 {
 				break;
 			}
 		}
-		return wordLength;
+		return str.substring(start, start + wordLength);
 	}
-
-	private static boolean isOneLongestWord(String str) {
-
-		int l1 = 0;
-		int l2 = 0;
-
-		int temp = 0;
-
-		for (int i = 0; i < str.length(); i++) {
-
-			if (str.charAt(i) != ' ') {
-				temp = countWordLength(str, i);
-
-				if (temp == l1) {
-					l2 = temp;
-				}
-				if (temp > l1) {
-					l1 = temp;
-				}
-
-			}
-			i = i + temp;
-		}
-		if (l1 == l2) {
-			return false;
-		}
-		return true;
-	}
-
 }
