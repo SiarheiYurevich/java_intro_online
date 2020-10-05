@@ -2,7 +2,7 @@ package by.java_intro_online.mod03.task06_15_string_and_string_builder;
 
 import java.util.Scanner;
 
-// Count number of upper case and lower case letters (Roman alphabet) in an entered string.
+// Count number of upper case and lower case letters (English alphabet) in an entered string.
 
 public class Task14 {
 
@@ -20,12 +20,12 @@ public class Task14 {
 
 		for (int i = 0; i < str.length(); i++) {
 			
-			int charNumber = (int) str.charAt(i);
+			int charCodePoint = (int) str.charAt(i);
 
-			if (charNumber >= 65 && charNumber <= 90) {
+			if (charCodePoint >= 65 && charCodePoint <= 90) {
 				upper++;
 			}
-			if (charNumber >= 97 && charNumber <= 122) {
+			if (charCodePoint >= 97 && charCodePoint <= 122) {
 				lower++;
 			}
 		}
