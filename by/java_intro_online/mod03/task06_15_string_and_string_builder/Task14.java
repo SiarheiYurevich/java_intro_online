@@ -20,12 +20,12 @@ public class Task14 {
 
 		for (int i = 0; i < str.length(); i++) {
 			
-			int charCodePoint = (int) str.charAt(i);
+			char letter = str.charAt(i);
 
-			if (charCodePoint >= 65 && charCodePoint <= 90) {
+			if (letter >= 'A' && letter <= 'Z') {
 				upper++;
 			}
-			if (charCodePoint >= 97 && charCodePoint <= 122) {
+			if (letter >= 'a' && letter <= 'z') {
 				lower++;
 			}
 		}
