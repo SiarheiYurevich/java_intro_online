@@ -18,9 +18,9 @@ public class Task15 {
 		
 		for (int i = 0; i < str.length(); i++) {
 			
-			char c = str.charAt(i);
+			char mark = str.charAt(i);
 			
-			if (c == '.' || c == '!' || c == '?') {
+			if (mark == '.' || mark == '!' || mark == '?') {
 				count++;
 			}
 		}
