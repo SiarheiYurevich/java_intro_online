@@ -29,8 +29,8 @@ public class Task14 {
 				lower++;
 			}
 		}
-		System.out.println("Number of upper case letters in the string is " + upper);
-		System.out.println("Number of lower case letters in the string is " + lower);
+		System.out.println("Number of upper case letters in the string is " + upper +
+				 "\nNumber of lower case letters in the string is " + lower);
 
 	}
 
