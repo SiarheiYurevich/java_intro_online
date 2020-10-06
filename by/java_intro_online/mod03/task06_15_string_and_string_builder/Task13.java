@@ -14,11 +14,9 @@ public class Task13 {
 
 	private static void findLongestWord(String str) {
 
-		int length1 = 0;
-		int index1 = 0;
-
-		int length2 = 0;
-
+		int lengthFirstWord = 0;
+		int indexFirstWord = 0;
+		int lengthSecondWord = 0;
 		int temp = 0;
 
 		for (int i = 0; i < str.length(); i++) {
@@ -27,21 +25,21 @@ public class Task13 {
 
 				temp = readWord(str, i).length();
 
-				if (temp == length1) {
-					length2 = temp;
+				if (temp == lengthFirstWord) {
+					lengthSecondWord = temp;
 				}
-				if (temp > length1) {
-					length1 = temp;
-					index1 = i;
+				if (temp > lengthFirstWord) {
+					lengthFirstWord = temp;
+					indexFirstWord = i;
 				}
 			}
 			i = i + temp;
 		}
 
-		if (length1 == length2) {
+		if (lengthFirstWord == lengthSecondWord) {
 			System.out.print("In the string are severel longest words");
 		} else {
-			System.out.print("The longest word in the string is " + readWord(str, index1));
+			System.out.print("The longest word in the string is " + readWord(str, indexFirstWord));
 		}
 	}
 
