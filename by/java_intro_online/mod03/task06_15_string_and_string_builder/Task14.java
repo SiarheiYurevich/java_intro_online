@@ -36,14 +36,12 @@ public class Task14 {
 
 	private static String inputString(String message) {
 
-		String string;
-
 		@SuppressWarnings("resource")
 		Scanner inputString = new Scanner(System.in);
 
 		System.out.print(message);
 
-		string = inputString.nextLine();
+		String string = inputString.nextLine();
 
 		return string;
 	}
