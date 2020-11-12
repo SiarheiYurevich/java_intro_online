@@ -32,7 +32,7 @@ public class DirectoryLogic {
 		}
 	}
 
-	public static void createFile(Directory dir) {
+	public static void addFile(Directory dir) {
 
 		File file = new File(generateFileName(dir));
 
