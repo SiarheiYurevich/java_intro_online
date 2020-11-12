@@ -20,7 +20,7 @@ public class Main {
 		DirectoryLogic.add(dir);
 		DirectoryLogic.addFile(dir, file);
 		DirectoryLogic.addFile(dir, file2);
-		DirectoryLogic.createFile(dir);
+		DirectoryLogic.addFile(dir);
 
 		View.output(file);
 		View.output(dir);
