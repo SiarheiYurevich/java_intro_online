@@ -32,10 +32,10 @@ public class Main {
 		cave.setName("RedDragonCave");
 		cave.setTreasures(RandomTreasuresGenerator.generate(cave.getCaveCapacity()));
 		
-		String directory = "/home/siarhei/eclipse-workspace/java_intro_online/src/by/java_intro_online/mod05/task04_treasure";
+		String directory = "/by/java_intro_online/mod05/task04_treasure";
 		dao.saveCaveInFile(cave, directory);
 		
-		String filePathname = "/home/siarhei/eclipse-workspace/java_intro_online/src/by/java_intro_online/mod05/task04_treasure/RedDragonCave.xml";
+		String filePathname = "/by/java_intro_online/mod05/task04_treasure/RedDragonCave.xml";
 		view.output(logic.getMostExpensiveTreasure(filePathname));
 		view.output(logic.getTreasuresForAmount(filePathname, 2000));
 	}
