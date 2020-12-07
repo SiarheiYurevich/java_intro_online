@@ -106,3 +106,18 @@ public class Task17 {
 		return content;
 	}
 }
+
+/*  Output:
+ * 
+ *  note id: 1
+ *  to: Vasily
+ *  from: Sveta
+ *  heading: Reminder
+ *  body: Call me tomorrow!
+ *  
+ *  note id: 2
+ *  to: Petr
+ *  from: Maria
+ *  heading: Important reminder
+ *  body: not found!
+ */
